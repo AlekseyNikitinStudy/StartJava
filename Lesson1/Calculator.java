@@ -7,34 +7,24 @@ public class Calculator {
         if (operation == '+') {
             int sum = firstNumber + secondNumber;
             System.out.println(firstNumber + " + " + secondNumber + " = " + sum);
-        } else {
-            if (operation == '-') {
-                int sub = firstNumber - secondNumber;
-                System.out.println(firstNumber + " - " + secondNumber + " = " + sub);
-            } else {
-                if (operation == '*') {
-                    int multiply = firstNumber * secondNumber;
-                    System.out.println(firstNumber + " * " + secondNumber + " = " + multiply);
-                } else {
-                    if (operation == '/') {
-                        float divide = (float) firstNumber / (float) secondNumber;
-                        System.out.println(firstNumber + " / " + secondNumber + " = " + divide);
-                    } else {
-                        if (operation == '^') {
-                            int power = 1;
-                            for (int i = 0; i < secondNumber; i++) {
-                                power = power * firstNumber;
-                            }
-                            System.out.println(firstNumber + " ^ " + secondNumber + " = " + power);
-                        } else {
-                            if (operation == '%') {
-                                int remainder= firstNumber % secondNumber;
-                                System.out.println(firstNumber + " % " + secondNumber + " = " + remainder);
-                            }
-                        }
-                    }
-                }
+        } else if (operation == '-') {
+            int sub = firstNumber - secondNumber;
+            System.out.println(firstNumber + " - " + secondNumber + " = " + sub);
+        } else if (operation == '*') {
+            int multiply = firstNumber * secondNumber;
+            System.out.println(firstNumber + " * " + secondNumber + " = " + multiply);
+        } else if (operation == '/') {
+            float divide = (float) firstNumber / (float) secondNumber;
+            System.out.println(firstNumber + " / " + secondNumber + " = " + divide);
+        } else if (operation == '^') {
+            int power = 1;
+            for (int i = 0; i < secondNumber; i++) {
+                power = power * firstNumber;
             }
+            System.out.println(firstNumber + " ^ " + secondNumber + " = " + power);
+        } else if (operation == '%') {
+            int remainder= firstNumber % secondNumber;
+            System.out.println(firstNumber + " % " + secondNumber + " = " + remainder);
         }
     }
 }
