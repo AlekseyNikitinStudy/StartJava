@@ -1,18 +1,18 @@
-public class GuessTheNumber {
+public class GuessNumber {
     public static void main(String[] args) {
-        int number = 34;
+        int hiddenNumber = 34;
         int playerNumber = 50;
         System.out.println("Try to guess the number.");
         do {
             System.out.println("Player number is " + playerNumber);
-            if (playerNumber > number) {
+            if (playerNumber > hiddenNumber) {
                 System.out.println("The number is less than player number " + playerNumber);
-                playerNumber = playerNumber - 1;
-            } else if (playerNumber < number) {
+                playerNumber--;
+            } else if (playerNumber < hiddenNumber) {
                 System.out.println("The number is more than player number " + playerNumber);
-                playerNumber = playerNumber + 1;
+                playerNumber++;
             }
-        } while (playerNumber != number);
-        System.out.print("The number is equals player number! The number is " + number);
+        } while (playerNumber != hiddenNumber);
+        System.out.print("The number is equals player number! The number is " + hiddenNumber);
     }
 }

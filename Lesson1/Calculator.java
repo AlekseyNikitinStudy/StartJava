@@ -1,30 +1,31 @@
 public class Calculator {
     public static void main(String[] args) {
-        int firstNumber = 2;
-        int secondNumber = 10;
+        int x = 2;
+        int y = 10;
         char operation = '^';
+        int result;
 
         if (operation == '+') {
-            int sum = firstNumber + secondNumber;
-            System.out.println(firstNumber + " + " + secondNumber + " = " + sum);
+            result = x + y;
+            System.out.println(x + " + " + y + " = " + result);
         } else if (operation == '-') {
-            int sub = firstNumber - secondNumber;
-            System.out.println(firstNumber + " - " + secondNumber + " = " + sub);
+            result = x - y;
+            System.out.println(x + " - " + y + " = " + result);
         } else if (operation == '*') {
-            int multiply = firstNumber * secondNumber;
-            System.out.println(firstNumber + " * " + secondNumber + " = " + multiply);
+            result = x * y;
+            System.out.println(x + " * " + y + " = " + result);
         } else if (operation == '/') {
-            float divide = (float) firstNumber / (float) secondNumber;
-            System.out.println(firstNumber + " / " + secondNumber + " = " + divide);
+            float resultF = (float) x / (float) y;
+            System.out.println(x + " / " + y + " = " + resultF);
         } else if (operation == '^') {
-            int power = 1;
-            for (int i = 0; i < secondNumber; i++) {
-                power = power * firstNumber;
+            result = 1;
+            for (int i = 0; i < y; i++) {
+                result *= x;
             }
-            System.out.println(firstNumber + " ^ " + secondNumber + " = " + power);
+            System.out.println(x + " ^ " + y + " = " + result);
         } else if (operation == '%') {
-            int remainder= firstNumber % secondNumber;
-            System.out.println(firstNumber + " % " + secondNumber + " = " + remainder);
+            result = x % y;
+            System.out.println(x + " % " + y + " = " + result);
         }
     }
 }
