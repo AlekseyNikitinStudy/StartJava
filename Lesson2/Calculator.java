@@ -1,7 +1,7 @@
 public class Calculator {
-    int x;
-    int y;
-    char sign;
+    private int x;
+    private int y;
+    private char sign;
 
     public Calculator(int x, int y, char sign) {
         this.x = x;
