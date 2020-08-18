@@ -1,5 +1,9 @@
 public class WolfModified {
     private String name;
+    private String gender;
+    private float height;
+    private float weight;
+    private int age;
 
     public String getName() {
         return name;
@@ -9,8 +13,6 @@ public class WolfModified {
         this.name = name;
     }
 
-    private String gender;
-
     public String getGender() {
         return gender;
     }
@@ -18,8 +20,6 @@ public class WolfModified {
     public void setGender(String gender) {
         this.gender = gender;
     }
-
-    private float height;
 
     public float getHeight() {
         return height;
@@ -29,8 +29,6 @@ public class WolfModified {
         this.height = height;
     }
 
-    private float weight;
-
     public float getWeight() {
         return weight;
     }
@@ -38,8 +36,6 @@ public class WolfModified {
     public void setWeight(float weight) {
         this.weight = weight;
     }
-
-    private int age;
 
     public int getAge() {
         return age;

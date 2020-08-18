@@ -16,13 +16,12 @@ public class CalculatorTest {
             int y = scan.nextInt();
 
             Calculator calculator = new Calculator(x, y, sign);
-            calculator.calculateAndOut();
+            System.out.println(calculator.calculate());
 
             do {
                 System.out.print("Хотите продолжить? [да]/[нет]: ");
                 answer = scan.next();
             } while (!answer.equals("да") && !answer.equals("нет"));
-
         } while (!answer.equals("нет"));
     }
 }

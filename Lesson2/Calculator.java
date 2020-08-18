@@ -9,36 +9,31 @@ public class Calculator {
         this.sign = sign;
     }
 
-    public void calculateAndOut() {
-        int resultInt;
-        float resultFloat;
+    public String calculate() {
+        float result;
 
         switch (sign) {
-            case ('+'):
-                resultInt = x + y;
-                System.out.println(x + " + " + y + " = " + resultInt);
+            case '+':
+                result = x + y;
                 break;
-            case ('*'):
-                resultInt = x * y;
-                System.out.println(x + " * " + y + " = " + resultInt);
+            case '*':
+                result = x * y;
                 break;
-            case ('/'):
-                resultFloat = (float) x / (float) y;
-                System.out.println(x + " / " + y + " = " + resultFloat);
+            case '/':
+                result = (float) x / (float) y;
                 break;
-            case ('^'):
-                resultInt = 1;
+            case '^':
+                result = 1;
                 for (int i = 0; i < y; i++) {
-                    resultInt *= x;
+                    result *= x;
                 }
-                System.out.println(x + " ^ " + y + " = " + resultInt);
                 break;
-            case ('%'):
-                resultInt = x % y;
-                System.out.println(x + " % " + y + " = " + resultInt);
+            case '%':
+                result = x % y;
                 break;
             default:
-                System.out.println("Недопустимый знак.");
+                return "Недопустимый знак.";
         }
+        return String.valueOf(result);
     }
 }

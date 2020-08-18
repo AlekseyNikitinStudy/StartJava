@@ -11,7 +11,6 @@ public class JaegerTest {
         jaegerOne.setKaijuKilled(jaegerOne.getKaijuKilled() + 1);
         System.out.println(jaegerOne.getModelName() + " убил " + jaegerOne.getKaijuKilled() + " кайдзю.");
 
-
         System.out.println("\n" + jaegerTwo.getModelName() + "[" + jaegerTwo.getMark() + "] from " + jaegerTwo.getOrigin() + " убил " + jaegerTwo.getKaijuKilled() + " кайдзю.");
         System.out.println("Рост: " + jaegerTwo.getHeight() + ", вес: " + jaegerTwo.getWeight() + ", сила: " + jaegerTwo.getStrength());
         jaegerTwo.move();
