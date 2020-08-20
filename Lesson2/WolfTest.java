@@ -6,6 +6,7 @@ public class WolfTest {
         System.out.println("height = " + wolfOne.height);
         System.out.println("weight = " + wolfOne.weight);
         System.out.println("age = " + wolfOne.age);
+
         wolfOne.walk();
         wolfOne.sit();
         wolfOne.run();

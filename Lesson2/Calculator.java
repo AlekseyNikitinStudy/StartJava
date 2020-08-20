@@ -1,12 +1,12 @@
 public class Calculator {
     private int x;
-    private int y;
     private char sign;
+    private int y;
 
-    public Calculator(int x, int y, char sign) {
+    public Calculator(int x, char sign, int y) {
         this.x = x;
-        this.y = y;
         this.sign = sign;
+        this.y = y;
     }
 
     public String calculate() {

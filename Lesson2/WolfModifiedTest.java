@@ -6,6 +6,7 @@ public class WolfModifiedTest {
         wolfOne.setGender("female");
         wolfOne.setHeight(36.8f);
         wolfOne.setWeight(24.3f);
+
         System.out.println("name = " + wolfOne.getName());
         System.out.println("gender = " + wolfOne.getGender());
         System.out.println("height = " + wolfOne.getHeight());
