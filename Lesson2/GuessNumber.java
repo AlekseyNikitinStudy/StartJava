@@ -31,7 +31,6 @@ public class GuessNumber {
         Scanner scan = new Scanner(System.in);
         System.out.print("Игрок " + player.getName() + ", введите число: ");
         player.setNumber(scan.nextInt());
-
     }
 
     private boolean compareNumber(Player player) {
