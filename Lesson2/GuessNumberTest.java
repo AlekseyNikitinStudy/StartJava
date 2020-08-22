@@ -4,18 +4,16 @@ public class GuessNumberTest {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         System.out.print("Введите имя первого игрока: ");
-        String name = scan.next();
-        Player playerOne = new Player(name);
+        Player playerOne = new Player(scan.next());
 
         System.out.print("Введите имя второго игрока: ");
-        name = scan.next();
-        Player playerTwo = new Player(name);
+        Player playerTwo = new Player(scan.next());
 
         GuessNumber guessNumber = new GuessNumber(playerOne, playerTwo);
 
         String answer;
         do {
-            guessNumber.mailLoop();
+            guessNumber.startGame();
             do {
                 System.out.print("Хотите продолжить? [да]/[нет]: ");
                 answer = scan.next();

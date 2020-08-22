@@ -9,40 +9,39 @@ public class GuessNumber {
     public GuessNumber(Player playerOne, Player playerTwo) {
         this.playerOne = playerOne;
         this.playerTwo = playerTwo;
+    }
+
+    private void generateHiddenNumber() {
         Random random = new Random();
         this.hiddenNumber = random.nextInt(100);
     }
 
-    public void mailLoop() {
-        int number;
-        Scanner scan = new Scanner(System.in);
+    public void startGame() {
+        generateHiddenNumber();
         Player playerCurrent = playerTwo;
         do {
-            if (playerCurrent == playerOne) {
-                playerCurrent = playerTwo;
-            } else {
-                playerCurrent = playerOne;
-            }
-            System.out.print("Игрок " + playerCurrent.getName() + ", введите число: ");
-            number = scan.nextInt();
-            playerCurrent.setNumber(number);
-
-            System.out.println(makeHint(playerCurrent));
-        } while (!checkNumber(number));
+            playerCurrent = playerCurrent == playerOne ? playerTwo : playerOne;
+            scanNumber(playerCurrent);
+        } while (!compareNumber(playerCurrent));
 
         System.out.println("Игрок " + playerCurrent.getName() + " победил!");
     }
 
-    public String makeHint (Player player) {
-        if (player.getNumber() > hiddenNumber) {
-            return "Загаданное число меньше, чем число " + player.getNumber() + " у игрока " + player.getName() + ".";
-        } else if (player.getNumber() < hiddenNumber) {
-            return "Загаданное число больше, чем число " + player.getNumber() + " у игрока " + player.getName() + ".";
-        }
-        return "Загаданное число совпадает с числом " + player.getNumber() + " у игрока " + player.getName() + ".";
+    private void scanNumber(Player player) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Игрок " + player.getName() + ", введите число: ");
+        player.setNumber(scan.nextInt());
+
     }
 
-    public boolean checkNumber(int number) {
-        return hiddenNumber == number;
+    private boolean compareNumber(Player player) {
+        if (player.getNumber() > hiddenNumber) {
+            System.out.println("Загаданное число меньше, чем число " + player.getNumber() + " у игрока " + player.getName() + ".");
+        } else if (player.getNumber() < hiddenNumber) {
+            System.out.println("Загаданное число больше, чем число " + player.getNumber() + " у игрока " + player.getName() + ".");
+        } else {
+            System.out.println("Загаданное число совпадает с числом " + player.getNumber() + " у игрока " + player.getName() + ".");
+        }
+        return hiddenNumber == player.getNumber();
     }
 }
