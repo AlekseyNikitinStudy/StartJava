@@ -11,36 +11,34 @@ public class GuessNumber {
         this.playerTwo = playerTwo;
     }
 
-    private void generateHiddenNumber() {
-        Random random = new Random();
-        this.hiddenNumber = random.nextInt(100);
-    }
-
     public void startGame() {
         generateHiddenNumber();
-        Player playerCurrent = playerTwo;
+        Player currentPlayer = playerTwo;
         do {
-            playerCurrent = playerCurrent == playerOne ? playerTwo : playerOne;
-            scanNumber(playerCurrent);
-        } while (!compareNumber(playerCurrent));
+            currentPlayer = currentPlayer == playerOne ? playerTwo : playerOne;
+            inputNumber(currentPlayer);
+        } while (!compareNumber(currentPlayer));
 
-        System.out.println("Игрок " + playerCurrent.getName() + " победил!");
+        System.out.println("Игрок " + currentPlayer.getName() + " победил!");
     }
 
-    private void scanNumber(Player player) {
+    private void generateHiddenNumber() {
+        Random random = new Random();
+        hiddenNumber = random.nextInt(100);
+    }
+
+    private void inputNumber(Player player) {
         Scanner scan = new Scanner(System.in);
         System.out.print("Игрок " + player.getName() + ", введите число: ");
         player.setNumber(scan.nextInt());
     }
 
     private boolean compareNumber(Player player) {
-        if (player.getNumber() > hiddenNumber) {
-            System.out.println("Загаданное число меньше, чем число " + player.getNumber() + " у игрока " + player.getName() + ".");
-        } else if (player.getNumber() < hiddenNumber) {
-            System.out.println("Загаданное число больше, чем число " + player.getNumber() + " у игрока " + player.getName() + ".");
-        } else {
-            System.out.println("Загаданное число совпадает с числом " + player.getNumber() + " у игрока " + player.getName() + ".");
-        }
+        String hint = player.getNumber() > hiddenNumber ? "Загаданное число меньше, чем число " + player.getNumber() + " у игрока " + player.getName() + "."
+                : player.getNumber() < hiddenNumber ? "Загаданное число больше, чем число " + player.getNumber() + " у игрока " + player.getName() + "."
+                : "Загаданное число совпадает с числом " + player.getNumber() + " у игрока " + player.getName() + ".";
+        System.out.println(hint);
+
         return hiddenNumber == player.getNumber();
     }
 }
