@@ -19,7 +19,7 @@ public class GuessNumberRefactor {
             inputNumber(currentPlayer);
             isGuess = compareNumber(currentPlayer);
             if (!isGuess) {
-                hint(currentPlayer);
+                showHint(currentPlayer);
                 currentPlayer = currentPlayer == playerOne ? playerTwo : playerOne;
             }
         }
@@ -42,7 +42,7 @@ public class GuessNumberRefactor {
         return hiddenNumber == player.getNumber();
     }
 
-    private void hint(Player player) {
+    private void showHint(Player player) {
         System.out.println(player.getNumber() > hiddenNumber ? "Загаданное число меньше."
                 : "Загаданное число больше.");
     }
