@@ -17,6 +17,7 @@ public class GuessNumber {
         do {
             currentPlayer = currentPlayer == playerOne ? playerTwo : playerOne;
             inputNumber(currentPlayer);
+            showHint(currentPlayer);
         } while (!compareNumber(currentPlayer));
 
         System.out.println("Игрок " + currentPlayer.getName() + " победил!");
@@ -33,10 +34,13 @@ public class GuessNumber {
         player.setNumber(scan.nextInt());
     }
 
-    private boolean compareNumber(Player player) {
+    private void showHint(Player player) {
         System.out.println(player.getNumber() > hiddenNumber ? "Загаданное число меньше."
                 : player.getNumber() < hiddenNumber ? "Загаданное число больше."
                 : "Число угадано!");
+    }
+
+    private boolean compareNumber(Player player) {
         return hiddenNumber == player.getNumber();
     }
 }
