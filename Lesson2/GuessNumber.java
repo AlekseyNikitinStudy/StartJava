@@ -24,7 +24,7 @@ public class GuessNumber {
 
     private void generateHiddenNumber() {
         Random random = new Random();
-        hiddenNumber = random.nextInt(100);
+        hiddenNumber = random.nextInt(101);
     }
 
     private void inputNumber(Player player) {
@@ -34,11 +34,9 @@ public class GuessNumber {
     }
 
     private boolean compareNumber(Player player) {
-        String hint = player.getNumber() > hiddenNumber ? "Загаданное число меньше, чем число " + player.getNumber() + " у игрока " + player.getName() + "."
-                : player.getNumber() < hiddenNumber ? "Загаданное число больше, чем число " + player.getNumber() + " у игрока " + player.getName() + "."
-                : "Загаданное число совпадает с числом " + player.getNumber() + " у игрока " + player.getName() + ".";
-        System.out.println(hint);
-
+        System.out.println(player.getNumber() > hiddenNumber ? "Загаданное число меньше."
+                : player.getNumber() < hiddenNumber ? "Загаданное число больше."
+                : "Число угадано!");
         return hiddenNumber == player.getNumber();
     }
 }
