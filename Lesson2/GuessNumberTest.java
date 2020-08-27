@@ -10,7 +10,6 @@ public class GuessNumberTest {
         Player playerTwo = new Player(scan.next());
 
         GuessNumber guessNumber = new GuessNumber(playerOne, playerTwo);
-        // GuessNumberRefactor guessNumber = new GuessNumberRefactor(playerOne, playerTwo);
 
         String answer;
         do {
