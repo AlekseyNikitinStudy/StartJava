@@ -44,9 +44,10 @@ public class GuessNumber {
     }
 
     private void showHint(Player player) {
-        if (!compareNumber(player))
+        if (!compareNumber(player)) {
             System.out.println(player.getNumber() > hiddenNumber ? "Загаданное число меньше."
                 : "Загаданное число больше.");
+        }    
     }
 
     private boolean compareNumber(Player player) {
