@@ -24,7 +24,7 @@ public class GuessNumber {
             currentPlayer = currentPlayer == playerOne ? playerTwo : playerOne;
             /* Ввод номер от текущего игрока. */
             inputNumber(currentPlayer);
-            /* Показываем подсказку - больше, меньше или победа. */
+            /* Показываем подсказку - больше или меньше. */
             showHint(currentPlayer);
         /* Сравниваем на равенство с загаданным числом и принимаем решение продолжать или нет цикл. */
         } while (!compareNumber(currentPlayer));
