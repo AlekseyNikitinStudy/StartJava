@@ -15,10 +15,12 @@ public class GuessNumber {
 
     public void startGame() {
         System.out.println("У вас " + Player.MAX_ATTEMPTS + " попыток.");
+
         generateHiddenNumber();
         playerOne.startGame();
         playerTwo.startGame();
         Player currentPlayer = null;
+
         do {
             currentPlayer = currentPlayer == playerOne ? playerTwo : playerOne;
             inputNumber(currentPlayer);
@@ -44,8 +46,8 @@ public class GuessNumber {
     private void showHint(Player player) {
         if (!compareNumber(player)) {
             System.out.println(player.getCurrentNumber() > hiddenNumber ? "Загаданное число меньше."
-                : "Загаданное число больше.");
-        }    
+                    : "Загаданное число больше.");
+        }
     }
 
     private boolean compareNumber(Player player) {
