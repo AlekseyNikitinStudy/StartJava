@@ -1,10 +1,13 @@
 package com.startjava.lesson_2_3_4.game;
 
+import java.util.Arrays;
+
 public class Player {
+    public static final int MAX_ATTEMPTS = 10;
+
     private String name;
     private int[] numbers;
     private int currentIndex;
-    public static final int MAX_ATTEMPTS = 10;
 
     public Player(String name) {
         this.name = name;
@@ -20,22 +23,25 @@ public class Player {
     }
 
     public void setCurrentNumber(int number) {
-        if (currentIndex < MAX_ATTEMPTS) {
-            this.numbers[currentIndex] = number;
-            currentIndex++;
-        }
+        this.numbers[currentIndex] = number;
+        currentIndex++;
     }
+
     public void startGame() {
+        Arrays.fill(numbers, 0, currentIndex, 0);
         currentIndex = 0;
     }
 
     public boolean isAttemptsOver() {
         return currentIndex == MAX_ATTEMPTS;
     }
+
     public void showNumbers() {
         System.out.print("\nЧисла игрока " + name + ": ");
-        for (int i = 0; i < currentIndex; i++) {
-            System.out.print(numbers[i] + " ");
+        int[] filledNumbers = Arrays.copyOf(numbers, currentIndex);
+
+        for (int filledNumber : filledNumbers) {
+            System.out.print(filledNumber + " ");
         }
     }
 
