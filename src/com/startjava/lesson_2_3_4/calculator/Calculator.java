@@ -5,10 +5,10 @@ public class Calculator {
     private char sign;
     private int y;
 
-    public Calculator(int x, char sign, int y) {
-        this.x = x;
-        this.sign = sign;
-        this.y = y;
+    public Calculator(String[] expression) {
+        x = Integer.parseInt(expression[0]);
+        sign = expression[1].charAt(0);
+        y = Integer.parseInt(expression[2]);
     }
 
     public String calculate() {
