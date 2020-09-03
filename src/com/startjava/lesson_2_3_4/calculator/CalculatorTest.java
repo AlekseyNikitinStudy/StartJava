@@ -10,8 +10,7 @@ public class CalculatorTest {
             System.out.print("Введите математическое выражение: ");
             String[] expression = scan.nextLine().split(" ");
 
-            Calculator calculator = new Calculator(Integer.parseInt(expression[0]), expression[1].charAt(0),
-                    Integer.parseInt(expression[2]));
+            Calculator calculator = new Calculator(expression);
             System.out.println(calculator.calculate());
 
             do {
