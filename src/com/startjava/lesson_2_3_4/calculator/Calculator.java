@@ -11,28 +11,19 @@ public class Calculator {
         y = Integer.parseInt(expression[2]);
     }
 
-    public String calculate() {
-        double result;
-
+    public double calculate() {
         switch (sign) {
             case '+':
-                result = x + y;
-                break;
+                return x + y;
             case '*':
-                result = Math.multiplyExact(x, y);
-                break;
+                return Math.multiplyExact(x, y);
             case '/':
-                result = (double) x / (double) y;
-                break;
+                return (double) x / (double) y;
             case '^':
-                result = Math.pow(x, y);
-                break;
+                return Math.pow(x, y);
             case '%':
-                result = x % y;
-                break;
-            default:
-                return "Недопустимый знак.";
+                return x % y;
         }
-        return String.valueOf(result);
+        return 0;
     }
 }

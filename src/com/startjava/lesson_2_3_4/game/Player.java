@@ -17,14 +17,14 @@ public class Player {
     }
 
     public int[] getNumbers() {
-        return numbers;
+        return Arrays.copyOf(numbers, attempt);
     }
 
     public int getAttempt() {
         return attempt;
     }
 
-    public int getCurrentNumber() {
+    public int getNumber() {
         return numbers[attempt - 1];
     }
 
