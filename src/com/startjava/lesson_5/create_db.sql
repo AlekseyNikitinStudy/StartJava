@@ -4,7 +4,7 @@ CREATE DATABASE jaegers;
 \c jaegers;
 
 CREATE TABLE jaegers(
-    id INTEGER NOT NULL,
+	id INTEGER NOT NULL,
 	modelName VARCHAR(100),
 	mark VARCHAR(100),
 	height REAL,
